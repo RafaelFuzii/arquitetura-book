@@ -1,5 +1,4 @@
 import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
-import { bookEnum } from "../enum/bookEnum";
 
 @Schema()
 export class Book {

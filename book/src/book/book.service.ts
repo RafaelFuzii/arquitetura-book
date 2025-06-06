@@ -14,7 +14,7 @@ export class BookService {
   async create(createBookDto: CreateBookDto) {
     const books = new this.bookModel(createBookDto)  
     await books.save()
-    return 'This action adds a new book';
+    return "Livro criado com sucesso"
   }
 
   findAll() {
@@ -42,7 +42,8 @@ export class BookService {
     ).exec()
   }
 
-  remove(id: string) {
-    return `This action removes a #${id} book`;
+  async remove(id: string) {
+    await this.bookModel.findByIdAndDelete(id)
+    return `Livro Deletado com Sucesso`;
   }
 }
